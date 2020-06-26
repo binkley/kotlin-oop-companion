@@ -1,5 +1,11 @@
 package hm.binkley.oop
 
-open class BaseCompanion
+interface BaseCompanion {
+    val WHO_AM_I: String
+}
 
-open class Base
+open class Base(
+    protected val companion: BaseCompanion
+) {
+    fun whoAmI() = companion.WHO_AM_I
+}
